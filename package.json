@@ -1,0 +1,28 @@
+{
+  "name": "snarli",
+  "version": "1.0.0",
+  "description": "snarli cli",
+  "license": "ISC",
+  "author": "",
+  "main": "index.js",
+  "bin": {
+    "snarli": "./index.js"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:sea": "esbuild index.js --bundle --platform=node --outfile=dist/index.cjs --format=cjs --metafile=dist/index.meta.json"
+  },
+  "dependencies": {
+    "chalk": "^5.5.0",
+    "commander": "^14.0.0",
+    "figlet": "^1.8.2",
+    "inquirer": "^8.2.4",
+    "inquirer-tree-prompt": "^1.1.2",
+    "ora": "^8.2.0",
+    "systeminformation": "^5.27.11"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.8"
+  }
+}
