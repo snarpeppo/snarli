@@ -4,14 +4,16 @@
   "description": "snarli cli",
   "license": "ISC",
   "author": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "bin": {
-    "snarli": "./index.js"
+    "snarli": "./dist/index.js"
   },
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build:sea": "esbuild index.js --bundle --platform=node --outfile=dist/index.cjs --format=cjs --metafile=dist/index.meta.json"
+    "build": "tsc",
+    "build:sea": "npm run build && esbuild dist/index.js --bundle --platform=node --outfile=dist/index.cjs --format=cjs --metafile=dist/index.meta.json",
+    "dev": "tsc --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "chalk": "^5.5.0",
@@ -23,6 +25,10 @@
     "systeminformation": "^5.27.11"
   },
   "devDependencies": {
-    "esbuild": "^0.25.8"
+    "@types/chalk": "^0.4.31",
+    "@types/inquirer": "^9.0.9",
+    "@types/node": "^25.0.3",
+    "esbuild": "^0.25.8",
+    "typescript": "^5.9.3"
   }
 }
